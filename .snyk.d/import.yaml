@@ -1,0 +1,24 @@
+---
+# Required: this file will likely change in the future, so we're versioning it from the beginning
+schema: 1
+# Optional: the API using the UUID for org and integration, but we want to reference them by name
+# when import.yaml is parsed it will perform the lookup against the approved org names and integration types
+# that exist in the config repo. This ensures that a repo can't be moved to a org outside of the control of 
+# the team that deploys snyk and that if an intergration is redone (and uuid changes) we don't need to update
+# every repository
+orgName: cse-ownership
+# Name of the integration to use - will default to same named integration used in config repo
+# this allows for a future option of pulling in projects in repos not in github but managing that list in github
+# github, github-enterprise, bitbucket, azure-repos
+integrationName: github-enterprise
+# Optional: any tags present here will be applied to *all* projects created by this import action
+# we don't support attributes at this time
+tags:
+  application: example
+  team: cse
+# Optional: folder/filenames to exclude (not paths)
+exclusionGlobs: "fixtures, tests, __tests__, node_modules"
+# Optional: provide one or more branches for import
+branches: 
+  - development
+  - main

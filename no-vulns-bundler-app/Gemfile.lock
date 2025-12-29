@@ -1,11 +1,17 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    bigdecimal (3.3.1)
+    csv (3.3.5)
     haml (4.0.7)
       tilt
-    httparty (0.14.0)
+    httparty (0.24.0)
+      csv
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    multi_xml (0.6.0)
+    mini_mime (1.1.5)
+    multi_xml (0.7.1)
+      bigdecimal (~> 3.1)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
@@ -20,8 +26,8 @@ PLATFORMS
 
 DEPENDENCIES
   haml
-  httparty
+  httparty (>= 0.24.0)
   sinatra
 
 BUNDLED WITH
-   1.14.2
+   2.3.27
